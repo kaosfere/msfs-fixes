@@ -1,0 +1,19 @@
+{
+  "dependencies": [
+    {
+      "name": "asobo-aircraft-tbm930"
+    }
+  ],
+  "content_type": "AIRCRAFT",
+  "title": "TBM 930",
+  "manufacturer": "Daher",
+  "creator": "Rob Jones",
+  "package_version": "0.1.0",
+  "minimum_game_version": "1.7.12",
+  "release_notes": {
+    "neutral": {
+      "LastUpdate": "Version 0.1.0\\nInitial release.",
+      "OlderHistory": ""
+    }
+  }
+}
