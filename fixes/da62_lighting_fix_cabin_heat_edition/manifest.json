@@ -8,12 +8,12 @@
   "title": "DA62",
   "manufacturer": "Diamond Aircraft",
   "creator": "Rob Jones",
-  "package_version": "0.1.1",
+  "package_version": "0.1.0",
   "minimum_game_version": "1.7.12",
   "release_notes": {
     "neutral": {
-      "LastUpdate": "Version 0.1.1\\nTrivial documentation update.",
-      "OlderHistory": "Version 0.1.0\\nInitial release."
+      "LastUpdate": "Version 0.1.0\\nInitial release.",
+      "OlderHistory": ""
     }
   }
 }
