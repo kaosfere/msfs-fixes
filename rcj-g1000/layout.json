@@ -1,0 +1,24 @@
+{
+    "content": [
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.html",
+            "size": 39365,
+            "date": 132433992995884640
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.js",
+            "size": 25808,
+            "date": 132433992995984320
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/BaseAS1000.js",
+            "size": 57451,
+            "date": 132433992995780416
+        },
+        {
+            "path": "ModelBehaviorDefs/Asobo/GlassCockpit/AS1000.xml",
+            "size": 72492,
+            "date": 132433992996074624
+        }
+    ]
+}
