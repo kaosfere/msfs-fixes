@@ -2,43 +2,48 @@
     "content": [
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.html",
-            "size": 39576,
-            "date": 132434428736870128
+            "size": 40032,
+            "date": 132434645307196640
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.js",
-            "size": 32812,
-            "date": 132434428736980128
+            "size": 27464,
+            "date": 132434645307293920
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.css",
-            "size": 73479,
-            "date": 132434430563017824
+            "size": 75659,
+            "date": 132434645307443632
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/BaseAS1000.js",
             "size": 57365,
-            "date": 132434428736760128
+            "date": 132434645306900544
         },
         {
             "path": "ModelBehaviorDefs/Asobo/GlassCockpit/AS1000.xml",
             "size": 72492,
-            "date": 132434428736640128
+            "date": 132434645307913920
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js",
             "size": 182856,
-            "date": 132434428737146912
+            "date": 132434645307563920
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.css",
             "size": 458,
-            "date": 132434428737075536
+            "date": 132434645307543680
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js",
             "size": 120476,
-            "date": 132434428737342000
+            "date": 132434645307763632
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SelectableElement.js",
+            "size": 12789,
+            "date": 132434646003484144
         }
     ]
 }

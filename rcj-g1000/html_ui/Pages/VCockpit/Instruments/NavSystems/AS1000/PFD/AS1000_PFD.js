@@ -262,14 +262,12 @@ class AS1000_PFD_MainPage extends NavSystemPage {
         if (currentBrightness < 10) {
             SimVar.SetSimVarValue("L:XMLVAR_G1000_Brightness", "number", ++currentBrightness);
         }
-        console.log(SimVar.GetSimVarValue("L:XMLVAR_G1000_Brightness", "number"))
     }
     decreaseBrightness() {
         var currentBrightness = SimVar.GetSimVarValue("L:XMLVAR_G1000_Brightness", "number");
         if (currentBrightness > 0) {
             SimVar.SetSimVarValue("L:XMLVAR_G1000_Brightness", "number", --currentBrightness);
         }
-        console.log(SimVar.GetSimVarValue("L:XMLVAR_G1000_Brightness", "number"))
     }
     getKeyState(_keyName) {
         switch (_keyName) {
@@ -534,38 +532,55 @@ class AS1000_PFD_ActiveFlightPlan_Element extends MFD_ActiveFlightPlan_Element {
 class AS1000_PFD_ConfigMenu extends NavSystemElement {
     init(root) {
         this.pfdConfWindow = this.gps.getChildById("PfdConfWindow");
-        this.alert1 = this.gps.getChildById("pfdAlert1");
-        this.alert2 = this.gps.getChildById("pfdAlert2");
-        this.alert3 = this.gps.getChildById("pfdAlert3");
+        this.pfdBrightLevel = this.gps.getChildById("pfdBrightLevel");
+        this.mfdBrightLevel = this.gps.getChildById("mfdBrightLevel")
         this.slider = this.gps.getChildById("pfdSlider");
         this.sliderCursor = this.gps.getChildById("pfdSliderCursor");
-        this.alertsGroup = new SelectableElementSliderGroup(this.gps, [
-            new SelectableElement(this.gps, this.alert1, this.alertSelectionCallback.bind(this)),
-            new SelectableElement(this.gps, this.alert2, this.alertSelectionCallback.bind(this)),
-            new SelectableElement(this.gps, this.alert3, this.alertSelectionCallback.bind(this))
-        ], this.slider, this.sliderCursor);
         this.defaultSelectables = [
-            this.alertsGroup
+            new SelectableElement(this.gps, this.pfdBrightLevel, this.pfdBrightCallback.bind(this)),
+            new SelectableElement(this.gps, this.mfdBrightLevel, this.mfdBrightCallback.bind(this))
         ];
-        console.log("INITED CONFIG MENU")
-
     }
     onEnter() {
-        console.log("CONFIG MENU ON ENTER")
         this.pfdConfWindow.setAttribute("state", "Active");
+        this.gps.ActiveSelection(this.defaultSelectables)
     }
     onUpdate(_deltaTime) {
-        //console.log("CONFIG MENU UPDATE")
+        this.pfdBrightLevel.textContent = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number");
+        this.mfdBrightLevel.textContent = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number");        
     }
     onExit() {
-        console.log("CONFIG MENU ON EXIT")
         this.pfdConfWindow.setAttribute("state", "Inactive");
+        this.gps.SwitchToInteractionState(0);
     }
     onEvent(_event) {
-        console.log("CONFIG MENU ON EVENT")
-
     }
-    alertSelectionCallback() {
+    pfdBrightCallback(_event) {
+        if (_event == "FMS_Upper_INC" || _event == "NavigationSmallInc") {
+            var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number")
+            if (brightLevel < 10) {
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number", ++brightLevel)
+            }
+        } else if (_event == "FMS_Upper_DEC" || _event == "NavigationSmallDec") {
+            var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number")
+            if (brightLevel > 0) {
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number", --brightLevel)
+            }
+
+        }
+    }
+    mfdBrightCallback(_event) {
+        if (_event == "FMS_Upper_INC" || _event == "NavigationSmallInc") {
+            var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number")
+            if (brightLevel < 10) {
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number", ++brightLevel)
+            }
+        } else if (_event == "FMS_Upper_DEC" || _event == "NavigationSmallDec") {
+            var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number")
+            if (brightLevel > 0) {
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number", --brightLevel)
+            }
+        }        
     }
 }
 registerInstrument("as1000-pfd-element", AS1000_PFD);

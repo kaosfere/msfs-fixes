@@ -1455,7 +1455,7 @@ as1000-pfd-element {
         right: 0%;
         height: 30%;
         bottom: 7%;
-        width: 29.8%;
+        width: 20%;
         background-color: #1a1d21;
         font-size: calc( 2.5 * 1vh * var(--bodyHeightScale));
         color: aqua;
@@ -1465,32 +1465,23 @@ as1000-pfd-element {
           text-align: center;
           width: 100%;
           border-bottom: 0.4vh solid white; }
-        as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider {
+        as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementList {
           height: 85%;
           width: 100%;
+          color: white(252, 252, 252);
           position: relative; }
-          as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdElements {
+          as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementList #pfdElements {
             height: 100%;
             width: 90%;
-            color: white; }
-            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdfElements #pfdAlert1, as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdElements #pfdAlert2, as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdElements #pfdAlert3 {
+            color: red; }
+            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdBrightLevel, as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #mfdBrightLevel {
+              color: red;
               height: 33%;
               border-bottom: 0.4vh solid white; }
-          as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdSlider {
-            position: absolute;
-            background-color: darkgrey;
-            right: 2%;
-            top: 5%;
-            height: 90%;
-            width: 4px; }
-            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdSlider[state=Active] {
-              visibility: inherit; }
-            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdSlider[state=Inactive] {
-              visibility: hidden; }
-            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementListAndSlider #pfdSlider #pfdSliderCursor {
-              position: absolute;
-              background-color: white;
-              width: 100%; }
+            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdBrightLevel[state="Selected"], as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #mfdBrightLevel[state="Selected"] {
+              color: green;
+              height: 33%;
+              border-bottom: 0.4vh solid white; }
               
               
       as1000-pfd-element #Mainframe #InstrumentsContainer #AlertsWindow {
