@@ -546,8 +546,8 @@ class AS1000_PFD_ConfigMenu extends NavSystemElement {
         this.gps.ActiveSelection(this.defaultSelectables)
     }
     onUpdate(_deltaTime) {
-        this.pfdBrightLevel.textContent = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number");
-        this.mfdBrightLevel.textContent = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number");        
+        this.pfdBrightLevel.textContent = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number") + "%";
+        this.mfdBrightLevel.textContent = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number") + "%";        
     }
     onExit() {
         this.pfdConfWindow.setAttribute("state", "Inactive");
@@ -558,13 +558,13 @@ class AS1000_PFD_ConfigMenu extends NavSystemElement {
     pfdBrightCallback(_event) {
         if (_event == "FMS_Upper_INC" || _event == "NavigationSmallInc") {
             var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number")
-            if (brightLevel < 10) {
-                SimVar.SetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number", ++brightLevel)
+            if (brightLevel < 100) {
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number", brightLevel + 10)
             }
         } else if (_event == "FMS_Upper_DEC" || _event == "NavigationSmallDec") {
             var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number")
             if (brightLevel > 0) {
-                SimVar.SetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number", --brightLevel)
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_PFD_Brightness", "number", brightLevel - 10)
             }
 
         }
@@ -572,13 +572,13 @@ class AS1000_PFD_ConfigMenu extends NavSystemElement {
     mfdBrightCallback(_event) {
         if (_event == "FMS_Upper_INC" || _event == "NavigationSmallInc") {
             var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number")
-            if (brightLevel < 10) {
-                SimVar.SetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number", ++brightLevel)
+            if (brightLevel < 100) {
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number", brightLevel + 10)
             }
         } else if (_event == "FMS_Upper_DEC" || _event == "NavigationSmallDec") {
             var brightLevel = SimVar.GetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number")
             if (brightLevel > 0) {
-                SimVar.SetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number", --brightLevel)
+                SimVar.SetSimVarValue("L:XMLVAR_AS1000_MFD_Brightness", "number", brightLevel - 10)
             }
         }        
     }

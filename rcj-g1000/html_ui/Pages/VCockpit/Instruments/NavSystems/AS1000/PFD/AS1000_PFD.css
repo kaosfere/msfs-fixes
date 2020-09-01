@@ -1458,32 +1458,29 @@ as1000-pfd-element {
         width: 20%;
         background-color: #1a1d21;
         font-size: calc( 2.5 * 1vh * var(--bodyHeightScale));
-        color: aqua;
+        color: white;
         padding-left: 1%;
         padding-right: 1%; }
         as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdTitle {
           text-align: center;
+          color: aqua;
           width: 100%;
           border-bottom: 0.4vh solid white; }
         as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementList {
           height: 85%;
           width: 100%;
-          color: white(252, 252, 252);
+          margin-top: 3%;
           position: relative; }
-          as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdElementList #pfdElements {
-            height: 100%;
-            width: 90%;
-            color: red; }
-            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdBrightLevel, as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #mfdBrightLevel {
-              color: red;
-              height: 33%;
-              border-bottom: 0.4vh solid white; }
-            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #pfdBrightLevel[state="Selected"], as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow #mfdBrightLevel[state="Selected"] {
-              color: green;
-              height: 33%;
-              border-bottom: 0.4vh solid white; }
-              
-              
+          as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow .pfdLine {
+            margin-top: 2%; }
+            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow .pfdBrightLevel {
+              color: white;
+              float: right; }
+            as1000-pfd-element #Mainframe #InstrumentsContainer #PfdConfWindow .pfdBrightLevel[state="Selected"] {
+              color: black;
+              background-color: aquamarine;
+              float: right; }
+                            
       as1000-pfd-element #Mainframe #InstrumentsContainer #AlertsWindow {
         position: absolute;
         right: 0%;
