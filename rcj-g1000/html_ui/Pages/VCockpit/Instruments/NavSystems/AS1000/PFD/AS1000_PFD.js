@@ -28,6 +28,7 @@ class AS1000_PFD extends BaseAS1000 {
         this.addEventLinkedPopupWindow(new NavSystemEventLinkedPopUpWindow("TMR/REF", "TmrRefWindow", timerRef, "Softkey_TMR_REF"));
         this.addEventLinkedPopupWindow(new NavSystemEventLinkedPopUpWindow("AFPL", "ActiveFlightPlan", new AS1000_PFD_ActiveFlightPlan_Element(5), "FPL_Push"));
         this.addEventLinkedPopupWindow(new NavSystemEventLinkedPopUpWindow("Procedures", "ProceduresWindow", new MFD_Procedures(), "PROC_Push"));
+        this.addEventLinkedPopupWindow(new NavSystemEventLinkedPopUpWindow("CONFIG", "PfdConfWindow", new AS1000_PFD_ConfigMenu(), "MENU_Push"));
         this.maxUpdateBudget = 12;
     }
     parseXMLConfig() {
@@ -229,6 +230,7 @@ class AS1000_PFD_MainPage extends NavSystemPage {
         ];
         this.softKeys = this.rootMenu;
     }
+
     switchToMenu(_menu) {
         this.softKeys = _menu;
     }
@@ -526,6 +528,44 @@ class AS1000_PFD_ActiveFlightPlan_Element extends MFD_ActiveFlightPlan_Element {
         super.onWaypointSelectionEnd();
         this.gps.popUpElement = this.container;
         this.gps.popUpElement.onEnter();
+    }
+}
+
+class AS1000_PFD_ConfigMenu extends NavSystemElement {
+    init(root) {
+        this.pfdConfWindow = this.gps.getChildById("PfdConfWindow");
+        this.alert1 = this.gps.getChildById("pfdAlert1");
+        this.alert2 = this.gps.getChildById("pfdAlert2");
+        this.alert3 = this.gps.getChildById("pfdAlert3");
+        this.slider = this.gps.getChildById("pfdSlider");
+        this.sliderCursor = this.gps.getChildById("pfdSliderCursor");
+        this.alertsGroup = new SelectableElementSliderGroup(this.gps, [
+            new SelectableElement(this.gps, this.alert1, this.alertSelectionCallback.bind(this)),
+            new SelectableElement(this.gps, this.alert2, this.alertSelectionCallback.bind(this)),
+            new SelectableElement(this.gps, this.alert3, this.alertSelectionCallback.bind(this))
+        ], this.slider, this.sliderCursor);
+        this.defaultSelectables = [
+            this.alertsGroup
+        ];
+        console.log("INITED CONFIG MENU")
+
+    }
+    onEnter() {
+        console.log("CONFIG MENU ON ENTER")
+        this.pfdConfWindow.setAttribute("state", "Active");
+    }
+    onUpdate(_deltaTime) {
+        //console.log("CONFIG MENU UPDATE")
+    }
+    onExit() {
+        console.log("CONFIG MENU ON EXIT")
+        this.pfdConfWindow.setAttribute("state", "Inactive");
+    }
+    onEvent(_event) {
+        console.log("CONFIG MENU ON EVENT")
+
+    }
+    alertSelectionCallback() {
     }
 }
 registerInstrument("as1000-pfd-element", AS1000_PFD);

@@ -245,6 +245,7 @@
                     </div>
                 </div>
 
+
                 <div id="NearestAirports" class="PopupWindow" state="Inactive">
                     <div id="title">NEAREST AIRPORTS</div>
                     <div id="ElementListAndSlider">
@@ -612,6 +613,23 @@
                     </div>
                 </div>
 
+                <div id="PfdConfWindow" class="PopupWindow" state="Inactive">
+                    <div id="pfdTitle">PFD SETUP MENU</div>
+                    <div class="line">PFD DSPL</div>
+                    <div class="line">MFD DSPL</div>
+                    <div id="pdfElementListAndSlider">
+                        <div id="pdfElements">
+                            <div id="pdfAlert1" class="Blinking"></div>
+                            <div id="pdfAlert2" class="Blinking"></div>
+                            <div id="pdfAlert3" class="Blinking"></div>
+                        </div>
+                        <div id="pdfSlider" state="Active">
+                            <div id="pdfSliderCursor"></div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div id="AlertsWindow" class="PopupWindow" state="Inactive">
                     <div id="title">ALERTS</div>
                     <div id="ElementListAndSlider">
@@ -625,6 +643,8 @@
                         </div>
                     </div>
                 </div>
+
+
 
                 <div id="ContextualMenu" state="Inactive">
                     <div id="ContextualMenuContent">
@@ -650,7 +670,7 @@
     </div>
 </script>
 
-<link rel="stylesheet" href="AS1000_PFD.css" />
+<link rel="stylesheet" href="AS1000_PFD.css?cachebust=A1" />
 
 <script type="text/html" import-script="/JS/SimPlane.js"></script>
 
@@ -686,13 +706,13 @@
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/ElevTrimGauge.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Gauges/RudderTrimGauge.js"></script>
 
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js?cachebust=A4"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/GaugeElement.js"></script>
 
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/Templates/XMLEngineDisplay/XMLEngineDisplay.js"></script>
 <script type="text/html" import-template="/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/Templates/EngineDisplay.html"></script>
 
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/BaseAS1000.js"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/BaseAS1000.js?cachebust=A5"></script>
 
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.js?cachebust=10"></script>
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.js?cachebust=A25"></script>

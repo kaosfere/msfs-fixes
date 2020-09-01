@@ -2,23 +2,43 @@
     "content": [
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.html",
-            "size": 39365,
-            "date": 132433992995884640
+            "size": 39576,
+            "date": 132434428736870128
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.js",
-            "size": 25808,
-            "date": 132433992995984320
+            "size": 32812,
+            "date": 132434428736980128
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.css",
+            "size": 73479,
+            "date": 132434430563017824
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/BaseAS1000.js",
-            "size": 57451,
-            "date": 132433992995780416
+            "size": 57365,
+            "date": 132434428736760128
         },
         {
             "path": "ModelBehaviorDefs/Asobo/GlassCockpit/AS1000.xml",
             "size": 72492,
-            "date": 132433992996074624
+            "date": 132434428736640128
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js",
+            "size": 182856,
+            "date": 132434428737146912
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.css",
+            "size": 458,
+            "date": 132434428737075536
+        },
+        {
+            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js",
+            "size": 120476,
+            "date": 132434428737342000
         }
     ]
 }

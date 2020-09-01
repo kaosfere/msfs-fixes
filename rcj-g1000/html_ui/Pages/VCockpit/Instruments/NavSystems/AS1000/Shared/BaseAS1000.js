@@ -14,9 +14,6 @@ class BaseAS1000 extends NavSystem {
         this.addEventAlias("FMS_Lower_INC", "NavigationLargeInc");
         this.addEventAlias("FMS_Lower_DEC", "NavigationLargeDec");
         this.addEventAlias("FMS_Upper_PUSH", "NavigationPush");
-        if (g_modDebugMgr) {
-            g_modDebugMgr.AddConsole(null);
-        }
     }
 }
 var AS1000;
