@@ -2,7 +2,9 @@
 
 This is a beta released of an improved G1000 for the new Microsoft Flight Simulator.  It's the next step up from the various tweaks I'd previously released allowing pilots to control G1000 brightness with hardware knobs in their cockpits.  I figured, rather than work around the absence of semi-realistic software dimming in the G1000, why not just add that feature to the display itself?   That's what this is.  Each panel is now individually dimmable from within the PFD configuration menu.
 
-This menu I had to create from scratch, and it approximates what it looks like in real life, but isn't exact, for two reasons.  One, I omitted the AUTO/MANUAL switch because auto brightness makes no sense in the sim right now.  Two, I don't own a G1000 or a G1000 simulator, so I had to go off a few small images and fuzzy videos.  I got it pretty close using what I had available in the sim without taking ages to get it pixel-perfect.  I think it works, but I'm open to suggestions for improvements.  (Or gifts of a G1000 simulator)
+This menu I had to create from scratch, and it approximates what it looks like in real life, but isn't exact, for two reasons.  One, I omitted the AUTO/MANUAL switch because auto brightness makes no sense in the sim right now.  Two, I don't own a G1000 or a G1000 simulator, so I had to go off a few small images and fuzzy videos.  I got it pretty close using what I had available in the sim without taking ages to get it pixel-perfect.  I think it works, but I'm open to suggestions for improvements.  (Or gifts of a G1000 simulator. :) )
+
+If you want to see this in action, I have put a brief [video on YouTube](https://www.youtube.com/watch?v=vZExvOiBZNw).
 
 I also added functionality to toggle synthetic vision on and off, a feature that's in the real units that are equipped with synthetic vision but which is also missing from the sim.
 
