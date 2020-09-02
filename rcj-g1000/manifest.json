@@ -11,11 +11,11 @@
   "title": "G1000 Updated",
   "manufacturer": "Garmin",
   "creator": "Rob Jones",
-  "package_version": "0.1.0",
+  "package_version": "0.1.0b",
   "minimum_game_version": "1.7.12",
   "release_notes": {
     "neutral": {
-      "LastUpdate": "Version 0.1.0\\nInitial release.",
+      "LastUpdate": "Version 0.1.0b\\nInitial beta release.",
       "OlderHistory": ""
     }
   }

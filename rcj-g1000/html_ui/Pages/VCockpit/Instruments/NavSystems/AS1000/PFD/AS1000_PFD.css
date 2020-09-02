@@ -1522,6 +1522,7 @@ as1000-pfd-element {
               position: absolute;
               background-color: white;
               width: 100%; }
+
       as1000-pfd-element #Mainframe #InstrumentsContainer #ContextualMenu {
         position: absolute;
         background-color: #1a1d21;

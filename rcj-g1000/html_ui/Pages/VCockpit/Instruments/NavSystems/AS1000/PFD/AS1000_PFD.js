@@ -77,11 +77,11 @@ class AS1000_PFD_MainPage extends NavSystemPage {
     constructor() {
         super("Main", "Mainframe", new AS1000_PFD_MainElement());
         this.rootMenu = new SoftKeysMenu();
-        this.brtMenu = new SoftKeysMenu();
         this.insetMenu = new SoftKeysMenu();
         this.xpndrMenu = new SoftKeysMenu();
         this.xpndrCodeMenu = new SoftKeysMenu();
         this.pfdMenu = new SoftKeysMenu();
+        this.synVisMenu = new SoftKeysMenu();
         this.windMenu = new SoftKeysMenu();
         this.hsiFrmtMenu = new SoftKeysMenu();
         this.syntheticVision = false;
@@ -118,7 +118,7 @@ class AS1000_PFD_MainPage extends NavSystemPage {
         this.rootMenu.elements = [
             new SoftKeyElement(),
             new SoftKeyElement("INSET", this.activateInsetMap.bind(this)),
-            new SoftKeyElement("BRT", this.switchToMenu.bind(this, this.brtMenu)),
+            new SoftKeyElement(""),
             new SoftKeyElement("PFD", this.switchToMenu.bind(this, this.pfdMenu)),
             new SoftKeyElement("OBS"),
             new SoftKeyElement("CDI", this.gps.computeEvent.bind(this.gps, "SoftKey_CDI")),
@@ -127,20 +127,6 @@ class AS1000_PFD_MainPage extends NavSystemPage {
             new SoftKeyElement("IDENT"),
             new SoftKeyElement("TMR/REF", this.gps.computeEvent.bind(this.gps, "Softkey_TMR_REF")),
             new SoftKeyElement("NRST", this.gps.computeEvent.bind(this.gps, "SoftKey_NRST")),
-            this.alertSoftkey,
-        ];
-        this.brtMenu.elements = [
-            new SoftKeyElement("UP", this.increaseBrightness.bind(this)),
-            new SoftKeyElement("DOWN", this.decreaseBrightness.bind(this)),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement(""),
-            new SoftKeyElement("BACK", this.switchToMenu.bind(this, this.rootMenu)),
             this.alertSoftkey,
         ];
         this.insetMenu.elements = [
@@ -187,7 +173,7 @@ class AS1000_PFD_MainPage extends NavSystemPage {
             this.alertSoftkey
         ];
         this.pfdMenu.elements = [
-            new SoftKeyElement(""),
+            new SoftKeyElement("SYN VIS", this.switchToMenu.bind(this, this.synVisMenu)),
             new SoftKeyElement("DFLTS"),
             new SoftKeyElement("WIND", this.switchToMenu.bind(this, this.windMenu)),
             new SoftKeyElement("DME", this.gps.computeEvent.bind(this.gps, "SoftKeys_PFD_DME")),
@@ -200,6 +186,20 @@ class AS1000_PFD_MainPage extends NavSystemPage {
             new SoftKeyElement("BACK", this.switchToMenu.bind(this, this.rootMenu)),
             this.alertSoftkey
         ];
+        this.synVisMenu.elements = [
+            new SoftKeyElement(""),
+            new SoftKeyElement("SYN TERR", this.toggleSyntheticVision.bind(this)),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement(""),
+            new SoftKeyElement("BACK", this.switchToMenu.bind(this, this.pfdMenu)),
+            this.alertSoftkey,
+        ];        
         this.windMenu.elements = [
             new SoftKeyElement(""),
             new SoftKeyElement(""),
@@ -256,6 +256,22 @@ class AS1000_PFD_MainPage extends NavSystemPage {
     }
     toggleIsolines() {
         this.gps.getElementOfType(PFD_InnerMap).toggleIsolines();
+    }
+    toggleSyntheticVision() {
+        var mainPage = this.gps.mainPage
+        if (mainPage.syntheticVision) {
+            if (mainPage.attitude.svg) {
+                mainPage.attitude.svg.setAttribute("background", "true");
+            }
+            this.gps.getChildById("SyntheticVision").style.display = "none";
+            mainPage.syntheticVision = false;
+        } else {
+            if (mainPage.attitude.svg) {
+                mainPage.attitude.svg.setAttribute("background", "false");
+            }
+            this.gps.getChildById("SyntheticVision").style.display = "block";
+            mainPage.syntheticVision = true;
+        }
     }
     increaseBrightness() {
         var currentBrightness = SimVar.GetSimVarValue("L:XMLVAR_G1000_Brightness", "number");

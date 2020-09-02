@@ -1,49 +1,24 @@
 {
     "content": [
         {
+            "path": "ModelBehaviorDefs/Asobo/GlassCockpit/AS1000.xml",
+            "size": 72505,
+            "date": 132434814326775600
+        },
+        {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.html",
-            "size": 40032,
-            "date": 132434645307196640
+            "size": 39877,
+            "date": 132434814326556128
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.js",
-            "size": 27464,
-            "date": 132434645307293920
+            "size": 29138,
+            "date": 132434814326675920
         },
         {
             "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/PFD/AS1000_PFD.css",
-            "size": 75659,
-            "date": 132434645307443632
-        },
-        {
-            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/AS1000/Shared/BaseAS1000.js",
-            "size": 57365,
-            "date": 132434645306900544
-        },
-        {
-            "path": "ModelBehaviorDefs/Asobo/GlassCockpit/AS1000.xml",
-            "size": 72492,
-            "date": 132434645307913920
-        },
-        {
-            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/CommonPFD_MFD.js",
-            "size": 182856,
-            "date": 132434645307563920
-        },
-        {
-            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.css",
-            "size": 458,
-            "date": 132434645307543680
-        },
-        {
-            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js",
-            "size": 120476,
-            "date": 132434645307763632
-        },
-        {
-            "path": "html_ui/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/SelectableElement.js",
-            "size": 12789,
-            "date": 132434646003484144
+            "size": 74798,
+            "date": 132434814326466128
         }
     ]
 }
