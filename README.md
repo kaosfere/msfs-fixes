@@ -1,5 +1,7 @@
 # MSFS Tweaks and Fixes
 
+**8 Sep 2020: I have combined my efforts with those of several others, and all future development on these particular things will be done [here](https://github.com/Working-Title-MSFS-Mods/fspackages).   The G1000 mod, in particular, can be downloaded from [here](https://github.com/Working-Title-MSFS-Mods/fspackages/releases).  This repo will be put into archive mode.**
+
 This will be a repository for various tweaks, fixes, or enhancements for the new Microsoft Flight Simulator.
 
 There are only few things here currently:
